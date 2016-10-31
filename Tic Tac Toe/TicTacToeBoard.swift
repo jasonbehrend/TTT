@@ -26,6 +26,7 @@ class TicTacToeBoard: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var p2: UILabel!
     
     
+    
     var player1 = true
     var clicked1 = false
     var clicked2 = false
@@ -38,6 +39,9 @@ class TicTacToeBoard: UIViewController, UITextFieldDelegate {
     var clicked9 = false
     var xList = [0]
     var oList = [0]
+    
+    var winningComboX = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 6], [2, 5, 8], [3, 6, 8], [1, 5, 9], [3, 5, 7]]
+    var winningComboO = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 6], [2, 5, 8], [3, 6, 8], [1, 5, 9], [3, 5, 7]]
     
     
     
@@ -235,21 +239,18 @@ class TicTacToeBoard: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func p1Name(_ sender: Any) {
-        if p1name.text != ""{
-            print (p1name.text!)
-            p1.text = self.p1name.text!
-    }
-    }
-    
-    @IBAction func p2Name(_ sender: Any) {
-        if p2name.text != ""{
-            p2.text = p2name.text!
-    }
+
+    func XSpace(_: int){
+        for i in winningComboX{
+            
         }
+        
+    }
     
-    // Mark: Actions
-
-
+    func checkX(){
+        print ("X")
+    }
+    
+    
+    
 }
