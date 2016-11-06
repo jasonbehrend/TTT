@@ -111,6 +111,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="player1TextField" destination="PNp-Ps-c1d" id="Mr3-EK-v1K"/>
+                        <outlet property="player2TextField" destination="CNm-8y-xk8" id="bWj-rJ-WVx"/>
                         <segue destination="L62-h8-l5f" kind="show" identifier="showGame" id="c45-fs-EV8"/>
                     </connections>
                 </viewController>
@@ -264,6 +266,10 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="player1Label" destination="2mG-CU-X6O" id="Qru-en-oHX"/>
+                        <outlet property="player2Label" destination="GlJ-49-DQI" id="Ue3-2l-hnf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8S-ez-3h5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

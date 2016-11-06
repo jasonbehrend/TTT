@@ -10,10 +10,18 @@ import UIKit
 
 class PlayGameVC: UIViewController {
     
+    var player1Name = "Joe"
+    var player2Name = "Bob"
+    
+    @IBOutlet weak var player1Label: UILabel!
+    @IBOutlet weak var player2Label: UILabel!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        player1Label.text = player1Name
+        player2Label.text = player2Name
 
         // Do any additional setup after loading the view.
     }
