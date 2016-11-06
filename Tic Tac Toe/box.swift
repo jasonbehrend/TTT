@@ -10,7 +10,7 @@ import Foundation
 
 class player{
     let range: CountableClosedRange = 0...7
-    var winningCombos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 6], [2, 5, 8], [3, 6, 8], [1, 5, 9], [3, 5, 7]]
+    var winningCombos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
     var last = 0
     var play = 0
     var turn = true
@@ -32,7 +32,6 @@ class player{
                 win = true
             }
         }
-        print("CHECK")
     }
     
     func playing(){

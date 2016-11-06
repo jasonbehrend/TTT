@@ -58,8 +58,8 @@ class WelcomeVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGame" {
             if let destinationVC = segue.destination as? PlayGameVC {
-                destinationVC.player1Name = ("\(player1Name): X")
-                destinationVC.player2Name = ("\(player2Name): O")
+                destinationVC.player1Name = player1Name
+                destinationVC.player2Name = player2Name
             }
         }
         
