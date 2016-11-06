@@ -20,14 +20,16 @@ class TicTacToeBoard: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var Square8: UIButton!
     @IBOutlet weak var Square9: UIButton!
     
+    @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var p1name: UITextField!
     @IBOutlet weak var p2name: UITextField!
     @IBOutlet weak var p1: UILabel!
     @IBOutlet weak var p2: UILabel!
     
+    let Player1 = player()
+    let Player2 = player()
     
     
-    var player1 = true
     var clicked1 = false
     var clicked2 = false
     var clicked3 = false
@@ -37,188 +39,187 @@ class TicTacToeBoard: UIViewController, UITextFieldDelegate {
     var clicked7 = false
     var clicked8 = false
     var clicked9 = false
-    var xList = [0]
-    var oList = [0]
-    
-    var winningComboX = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 6], [2, 5, 8], [3, 6, 8], [1, 5, 9], [3, 5, 7]]
-    var winningComboO = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 6], [2, 5, 8], [3, 6, 8], [1, 5, 9], [3, 5, 7]]
-    
-    
     
     @IBAction func square1(_ sender: Any) {
         if clicked1 == false{
-            if player1 == true{
+            if Player1.turn == true{
                 Square1.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
-                xList.append(1)
-                player1 = false
-                print(xList)
                 clicked1 = true
+                Player1.remove(num: 1)
             }
-            else{
+            else if Player2.turn == true{
                 Square1.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
-                oList.append(1)
-                player1 = true
-                print(oList)
                 clicked1 = true
+                Player2.remove(num: 1)
             }
+            Player1.playing()
+            Player2.playing()
+            
+            check()
         }
     }
     
     @IBAction func square2(_ sender: Any) {
         if clicked2 == false{
-            if player1 == true{
+            if Player1.turn == true{
                 Square2.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
-                xList.append(2)
-                player1 = false
-                print(xList)
                 clicked2 = true
+                Player1.remove(num: 2)
+
             }
-            else{
+            else if Player2.turn == true{
                 Square2.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
-                oList.append(2)
-                player1 = true
-                print(oList)
                 clicked2 = true
+                Player2.remove(num: 2)
             }
+            Player1.playing()
+            Player2.playing()
+            
+            check()
         }
     }
     
     @IBAction func square3(_ sender: Any) {
         if clicked3 == false{
-            if player1 == true{
+            if Player1.turn == true{
                 Square3.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
-                xList.append(3)
-                player1 = false
-                print(xList)
                 clicked3 = true
+                Player1.remove(num: 3)
+
             }
-            else{
+            else if Player2.turn == true{
                 Square3.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
-                oList.append(3)
-                player1 = true
-                print(oList)
                 clicked3 = true
+                Player2.remove(num: 3)
             }
+            Player1.playing()
+            Player2.playing()
+            
+            check()
         }
     }
     
     @IBAction func square4(_ sender: Any) {
         if clicked4 == false{
-            if player1 == true{
+            if Player1.turn == true{
                 Square4.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
-                xList.append(4)
-                player1 = false
-                print(xList)
                 clicked4 = true
+                Player1.remove(num: 4)
             }
-            else{
+            else if Player2.turn == true{
                 Square4.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
-                oList.append(4)
-                player1 = true
-                print(oList)
                 clicked4 = true
+                Player2.remove(num: 4)
             }
+            
+            Player1.playing()
+            Player2.playing()
+            
+            check()
         }
     }
     
     @IBAction func square5(_ sender: Any) {
         if clicked5 == false{
-            if player1 == true{
+            if Player1.turn == true{
                 Square5.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
-                xList.append(5)
-                player1 = false
-                print(xList)
                 clicked5 = true
+                Player1.remove(num: 5)
             }
-            else{
+            else if Player2.turn == true{
                 Square5.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
-                oList.append(5)
-                player1 = true
-                print(oList)
                 clicked5 = true
+                Player2.remove(num: 5)
             }
+            Player1.playing()
+            Player2.playing()
+            
+            check()
         }
     }
     
     @IBAction func square6(_ sender: Any) {
         if clicked6 == false{
-            if player1 == true{
+            if Player1.turn == true{
                 Square6.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
-                xList.append(6)
-                player1 = false
-                print(xList)
                 clicked6 = true
+                Player1.remove(num: 6)
             }
-            else{
+            else if Player2.turn == true{
                 Square6.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
-                oList.append(6)
-                player1 = true
-                print(oList)
                 clicked6 = true
+                Player2.remove(num: 6)
             }
+            Player1.playing()
+            Player2.playing()
+            
+            check()
         }
     }
     
     @IBAction func square7(_ sender: Any) {
         if clicked7 == false{
-            if player1 == true{
+            if Player1.turn == true{
                 Square7.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
-                xList.append(7)
-                player1 = false
-                print(xList)
                 clicked7 = true
+                Player1.remove(num: 7)
             }
-            else{
+            else if Player2.turn == true{
                 Square7.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
-                oList.append(7)
-                player1 = true
-                print(oList)
                 clicked7 = true
+                Player2.remove(num: 7)
             }
+            Player1.playing()
+            Player2.playing()
+            
+            check()
         }
     }
     
     @IBAction func square8(_ sender: Any) {
         if clicked8 == false{
-            if player1 == true{
+            if Player1.turn == true{
                 Square8.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
-                xList.append(8)
-                player1 = false
-                print(xList)
                 clicked8 = true
+                Player1.remove(num: 8)
             }
-            else{
+            else if Player2.turn == true{
                 Square8.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
-                oList.append(8)
-                player1 = true
-                print(oList)
                 clicked8 = true
+                Player2.remove(num: 8)
             }
+            Player1.playing()
+            Player2.playing()
+            
+            check()
         }
     }
     
     @IBAction func square9(_ sender: Any) {
         if clicked9 == false{
-            if player1 == true{
+            if Player1.turn == true{
                 Square9.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
-                xList.append(9)
-                player1 = false
-                print(xList)
                 clicked9 = true
+                Player1.remove(num: 9)
             }
-            else{
+            else if Player2.turn == true{
                 Square9.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
-                oList.append(9)
-                player1 = true
-                print(oList)
                 clicked9 = true
+                Player2.remove(num: 9)
             }
+            Player1.playing()
+            Player2.playing()
+            
+            check()
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        Player2.playing()
         
         // Do any additional setup after loading the view.
 
@@ -240,16 +241,33 @@ class TicTacToeBoard: UIViewController, UITextFieldDelegate {
     }
     */
 
-    func XSpace(_: int){
-        for i in winningComboX{
-            
+    @IBAction func playButton(_ sender: Any) {
+        print("THE NAMES")
+        print(p1name.text!)
+        print(p2name.text!)
+    }
+
+    func check(){
+        Player1.check()
+        Player2.check()
+        
+        print("Did call check")
+        
+        if Player1.win == true{
+            Player1.turn = false
+            Player2.turn = false
+            winnerLabel.text = "Player 1 won"
         }
         
+        if Player2.win == true{
+            Player1.turn = false
+            Player2.turn = false
+            winnerLabel.text = "Player 2 won"
+        }
+
     }
     
-    func checkX(){
-        print ("X")
-    }
+    
     
     
     
