@@ -40,6 +40,23 @@ class TicTacToeBoard: UIViewController, UITextFieldDelegate {
     var clicked8 = false
     var clicked9 = false
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print(p1.text!)
+        
+        
+        Player2.playing()
+        
+        // Do any additional setup after loading the view.
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     @IBAction func square1(_ sender: Any) {
         if clicked1 == false{
             if Player1.turn == true{
@@ -214,22 +231,6 @@ class TicTacToeBoard: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
-        Player2.playing()
-        
-        // Do any additional setup after loading the view.
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -245,6 +246,8 @@ class TicTacToeBoard: UIViewController, UITextFieldDelegate {
         print("THE NAMES")
         print(p1name.text!)
         print(p2name.text!)
+        
+        
     }
 
     func check(){
