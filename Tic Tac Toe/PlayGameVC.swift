@@ -28,6 +28,8 @@ class PlayGameVC: UIViewController {
     
     @IBOutlet weak var playerTurnLabel: UILabel!
     
+    @IBOutlet weak var playAgainButton: UIButton!
+    
     var clicked1 = false
     var clicked2 = false
     var clicked3 = false
@@ -292,18 +294,22 @@ class PlayGameVC: UIViewController {
             Player1.turn = false
             Player2.turn = false
             playerTurnLabel.text = ("\(player1Name) Won!")
+            playAgainButton.setTitle("Play Again", for: UIControlState.normal)
         }
         
         if Player2.win == true{
             Player1.turn = false
             Player2.turn = false
             playerTurnLabel.text = ("\(player2Name) Won!")
+            playAgainButton.setTitle("Play Again", for: UIControlState.normal)
+            
         }
         
         if openSpots == []{
             if Player1.win == false{
                 if Player2.win == false{
                     playerTurnLabel.text = "It's a Tie"
+                    playAgainButton.setTitle("Play Again", for: UIControlState.normal)
                 }
             }
         }
@@ -313,10 +319,12 @@ class PlayGameVC: UIViewController {
     func updateLabels(){
         if Player1.turn == true{
             playerTurnLabel.text = ("\(player1Name)'s Turn")
+            
         }
         else if Player2.turn == true{
             playerTurnLabel.text = ("\(player2Name)'s Turn")
         }
     }
+    
 }
 

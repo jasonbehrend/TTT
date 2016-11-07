@@ -64,5 +64,9 @@ class WelcomeVC: UIViewController {
         }
         
     }
+    
+    @IBAction func goBackToWelcomeScreen(sender: UIStoryboardSegue){
+        print("called unwind segue")
+    }
 
 }
