@@ -270,10 +270,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjq-dk-NkR">
-                                <rect key="frame" x="16" y="518" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
+                                <rect key="frame" x="16" y="518" width="30" height="30"/>
+                                <state key="normal" title="Quit"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Swb-db-K1V"/>
+                                    <segue destination="EWo-RU-bQu" kind="unwind" unwindAction="goBackToWelcomeScreenWithSender:" id="5Ut-Rb-E77"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -324,14 +324,16 @@
                         <outlet property="Square7" destination="dmB-jX-sS4" id="SDR-C6-B34"/>
                         <outlet property="Square8" destination="zVj-EJ-UsG" id="x92-Au-i3B"/>
                         <outlet property="Square9" destination="5mW-gF-uM7" id="hcd-XI-ilw"/>
+                        <outlet property="playAgainButton" destination="wjq-dk-NkR" id="f5o-m7-PiB"/>
                         <outlet property="player1Label" destination="2mG-CU-X6O" id="Qru-en-oHX"/>
                         <outlet property="player2Label" destination="GlJ-49-DQI" id="Ue3-2l-hnf"/>
                         <outlet property="playerTurnLabel" destination="zJ4-Ou-mpQ" id="ZyZ-6T-gxB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8S-ez-3h5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EWo-RU-bQu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="299"/>
+            <point key="canvasLocation" x="1723" y="299"/>
         </scene>
     </scenes>
     <resources>

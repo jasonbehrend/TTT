@@ -28,6 +28,8 @@ class PlayGameVC: UIViewController {
     
     @IBOutlet weak var playerTurnLabel: UILabel!
     
+    @IBOutlet weak var playAgainButton: UIButton!
+    
     var clicked1 = false
     var clicked2 = false
     var clicked3 = false
@@ -72,14 +74,14 @@ class PlayGameVC: UIViewController {
     */
 
     @IBAction func square1(_ sender: Any) {
-        if clicked1 == false{
-            if Player1.turn == true{
+        if !clicked1 {
+            if Player1.turn {
                 Square1.tintColor = UIColor.red
                 Square1.setImage(#imageLiteral(resourceName: "x"), for: UIControlState.normal)
                 clicked1 = true
                 Player1.remove(num: 1)
             }
-            else if Player2.turn == true{
+            else if Player2.turn {
                 Square1.setImage(#imageLiteral(resourceName: "o"), for: UIControlState.normal)
                 clicked1 = true
                 Player2.remove(num: 1)
@@ -292,18 +294,22 @@ class PlayGameVC: UIViewController {
             Player1.turn = false
             Player2.turn = false
             playerTurnLabel.text = ("\(player1Name) Won!")
+            playAgainButton.setTitle("Play Again", for: UIControlState.normal)
         }
         
         if Player2.win == true{
             Player1.turn = false
             Player2.turn = false
             playerTurnLabel.text = ("\(player2Name) Won!")
+            playAgainButton.setTitle("Play Again", for: UIControlState.normal)
+            
         }
         
         if openSpots == []{
             if Player1.win == false{
                 if Player2.win == false{
                     playerTurnLabel.text = "It's a Tie"
+                    playAgainButton.setTitle("Play Again", for: UIControlState.normal)
                 }
             }
         }
@@ -313,10 +319,12 @@ class PlayGameVC: UIViewController {
     func updateLabels(){
         if Player1.turn == true{
             playerTurnLabel.text = ("\(player1Name)'s Turn")
+            
         }
         else if Player2.turn == true{
             playerTurnLabel.text = ("\(player2Name)'s Turn")
         }
     }
+    
 }
 
