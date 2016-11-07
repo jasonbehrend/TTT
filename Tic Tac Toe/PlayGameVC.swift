@@ -42,8 +42,8 @@ class PlayGameVC: UIViewController {
     
     var openSpots = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-    let Player1 = player()
-    let Player2 = player()
+    let Player1 = Player()
+    let Player2 = Player()
 
     override func viewDidLoad() {
         super.viewDidLoad()
